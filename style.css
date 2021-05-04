@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+:root {
+    --primary-cyan: hsl(180, 29%, 50%);
+    --light-grey-cyan: hsl(180, 52%, 96%);
+    --lighter-grey-cyan: hsl(180, 31%, 95%);
+    --dark-grey-cyan: hsl(180, 8%, 52%);
+    --very-dark-grey-cyan: hsl(180, 14%, 20%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--light-grey-cyan);
+    font-family: "Spartan", sans-serif;
+    font-size: 15px;
+}
+
+h1, h2 {
+    color: var(--primary-cyan);
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+/* Header */
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 150px;
+    background: url("./images/bg-header-desktop.svg");
+    background-color: var(--primary-cyan);
+}
+
+/* Listing */
+
+#listing-div, #main-content {
+    width: 80vw;
+    min-height: 300px;
+    margin: 50px auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-item, #filter-div {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 150px;
+    background: white;
+    margin-bottom: 30px;
+    padding: 20px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 20px rgba(91, 164, 164, 0.5);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.list-item:hover .list-item-info div .position-heading {
+    color: var(--primary-cyan);
+}
+
+.featured {
+    border-left: 10px var(--primary-cyan) solid;
+}
+
+.list-item img {
+    padding: 0px 30px;
+}
+
+.list-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.list-item-info div {
+    margin-bottom: 10px;
+}
+
+.list-item-info div h1 {
+    color: var(--very-dark-grey-cyan);
+}
+
+.new-heading, .featured-heading {
+    border-radius: 20px;
+    padding: 10px 10px 6px 10px;
+}
+
+.new-heading h2, .featured-heading h2 {
+    color: white;
+    font-size: 12px;
+}
+
+.new-heading {
+    background: var(--primary-cyan);
+}
+
+.featured-heading {
+    background: black;
+}
+
+.list-item-info-details, .list-item-info-company {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.list-item-info-company span {
+    margin-right: 10px;
+}
+
+.list-item-info-details h2 {
+    color: var(--dark-grey-cyan);
+    font-weight: 500;
+}
+
+.list-item-categories {
+    margin-left: auto;
+    margin-right: 30px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.list-item-categories span {
+    background: var(--lighter-grey-cyan);
+    margin: 10px;
+    border-radius: 5px;
+
+    -webkit-transition: background 0.5s ease-out;
+    -moz-transition: background 0.5s ease-out;
+    -ms-transition: background 0.5s ease-out;
+    -o-transition: background 0.5s ease-out;
+}
+
+.list-item-categories span h2 {
+    padding: 10px 10px 6px 10px;
+}
+
+.list-item-categories span:hover {
+    background: var(--primary-cyan);
+    cursor: pointer;
+}
+
+.list-item-categories span h2:hover {
+    color: white;
+}
+
+/* Filter  */
+
+#filter-div {
+    opacity: 0;
+    margin-top: 50px;
+    width: 80vw;
+    min-height: 100px;
+    padding: 20px 30px;
+    margin-bottom: 0;
+    z-index: 1;
+}
+
+#filter-div:hover {
+    cursor: default
+}
+
+#filter-div .list-item-categories  {
+    margin: 0px;
+}
+
+#filter-div .list-item-categories span  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#filter-div .list-item-categories span:hover  {
+    background:var(--lighter-grey-cyan);
+    cursor:default;
+}
+
+#filter-div .list-item-categories span h2:hover {
+    color: var(--primary-cyan)
+}
+
+#filter-div .list-item-categories span img {
+    padding: 10px;
+    background: var(--primary-cyan);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+#filter-div .list-item-categories span img:hover {
+    background: var(--very-dark-grey-cyan);
+}
+
+/* Media queries */
+
+@media screen and (max-width: 900px) {
+
+    .list-item {
+            position: relative;
+            margin-bottom: 60px;
+            padding: 50px 20px 30px 20px;
+        }
+
+    .list-item img {
+        position: absolute;
+        align-self: flex-start;
+        width: 70px;
+        top: -35px;
+        left:20px;
+        padding: 0;
+    }
+
+    .list-item-info div {
+        margin-bottom: 20px;
+    }
+
+    .list-item-categories {
+        margin-left: 0px;
+    }
+
+    .list-item-categories span {
+        margin: 10px 10px 10px 0px;
+    }
+}
